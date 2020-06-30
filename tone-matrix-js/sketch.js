@@ -41,7 +41,7 @@ var glow_rect_size = (dotSize + spacer) / 1.1;
 var drawLock = false;
 var drawStyle;
 //------------------------------------------------------------------------------
-/*function windowResized()
+function windowResized()
 {
   if (typeof fullscreenMode != "undefined")
   {
@@ -56,8 +56,8 @@ var drawStyle;
   {
     screensize = (4 * $("#sketch-container").width()) / 5;
   }
-  spacer = screensize / (4 * s);
-  dotSize = (screensize / s) - (spacer);
+  spacer = screensize / (4 * num_notas);
+  dotSize = (screensize / num_notas) - (spacer);
   glow_size = dotSize + (spacer * 4);
   glow_rect_size = (dotSize + spacer) / 1.1;
   glow_rect = createGraphics(glow_size, glow_size);
@@ -70,7 +70,7 @@ var drawStyle;
   glow_rect.updatePixels();
   glow_rect.filter(DILATE);
   resizeCanvas(screensize + spacer, screensize + spacer);
-}*/
+}
 //------------------------------------------------------------------------------
 function midi2Hz(midiNoteNumber)
 {
