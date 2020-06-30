@@ -13,8 +13,8 @@ function mousePressed()
     if (getAudioContext().state !== 'running'){
       getAudioContext().resume();
     }
-    let nota = Math.floor(constrain((mouseY * num_pasos) / height, 0, num_pasos - 1));
-    let paso = Math.floor(constrain((mouseX * num_notas) / width, 0, num_notas - 1));
+    let nota = Math.floor(constrain((mouseY * numPasos) / height, 0, numPasos - 1));
+    let paso = Math.floor(constrain((mouseX * numNotas) / width, 0, numNotas - 1));
     if (!drawLock)
     {
       drawLock = true;
@@ -38,8 +38,8 @@ function mouseDragged()
     mouseY < height
   )
   {
-    let nota = Math.floor(constrain((mouseY * num_pasos) / height, 0, num_pasos - 1));
-    let paso = Math.floor(constrain((mouseX * num_notas) / width, 0, num_notas - 1));
+    let nota = Math.floor(constrain((mouseY * numPasos) / height, 0, numPasos - 1));
+    let paso = Math.floor(constrain((mouseX * numNotas) / width, 0, numNotas - 1));
 
     matriz.voltear(paso, nota);
   }
