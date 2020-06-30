@@ -17,22 +17,6 @@ class Pattern
     this.binArray = new Array(this.s)
     this.clear();
   }
-  obtenerMatriz() {
-    // copia
-    let nuevaMatriz = new Array(this.s);
-    for (var i = 0; i < this.s; i++) {
-      nuevaMatriz[i] = new Array(this.s);
-    }
-    for (var i = 0; i < this.s; i++) {
-      for (var j = 0; j < this.s; j++) {
-        nuevaMatriz[i][j] = this.steps[i][j];
-      }
-    }
-    return nuevaMatriz;
-  }
-  actualizarMatriz(nuevaMatriz){
-    this.steps = nuevaMatriz;
-  }
   //----------------------------------------------------------------------------
   setStepNote(step, note, value)
   {
@@ -133,20 +117,5 @@ class Pattern
         this.ripple.mapB[beat][note] = -1;
       }
     }
-  }
-  calcularNumeroVecinos(x, y) {
-    const num_steps = this.steps.length;
-    const num_notes = this.s
-    return this.getStep((x-1+num_steps)%num_steps, (y-1+num_notes)%num_notes) +
-           this.getStep((x-0+num_steps)%num_steps, (y-1+num_notes)%num_notes) +
-           this.getStep((x+1+num_steps)%num_steps, (y-1+num_notes)%num_notes) +
-
-           this.getStep((x-1+num_steps)%num_steps, (y-0+num_notes)%num_notes) +
-          //  this.getStep((x-0+num_steps)%num_steps, (y-0+num_notes)%num_notes) +
-           this.getStep((x+1+num_steps)%num_steps, (y-0+num_notes)%num_notes) +
-
-           this.getStep((x-1+num_steps)%num_steps, (y+1+num_notes)%num_notes) +
-           this.getStep((x-0+num_steps)%num_steps, (y+1+num_notes)%num_notes) +
-           this.getStep((x+1+num_steps)%num_steps, (y+1+num_notes )%num_notes);
   }
 }

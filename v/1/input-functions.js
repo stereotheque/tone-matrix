@@ -13,16 +13,16 @@ function mousePressed()
     {
       getAudioContext().resume();
     }
-    var beat = Math.floor(constrain((mouseX * num_notas) / width, 0, num_notas - 1));
-    var note = Math.floor(constrain((mouseY * num_notas) / height, 0, num_notas - 1));
-    console.log(beat, note);
+    var note = Math.floor(constrain((mouseX * num_notas) / width, 0, num_notas - 1));
+    var beat = Math.floor(constrain((mouseY * num_notas) / height, 0, num_notas - 1));
+
     if (!drawLock)
     {
-      drawStyle = !pat.getStep(beat, note);
+      drawStyle = !pat.getStep(note, beat);
       drawLock = true;
     }
 
-    pat.setStepNote(beat, note, drawStyle);
+    pat.setStepNote(note, beat, drawStyle);
   }
 }
 
